@@ -1,21 +1,21 @@
 var gulp = require('gulp');
-var fileInclude = require('gulp-file-include');
 var htmlmin = require('gulp-htmlmin');
 var sass = require('gulp-sass');
+var pug = require('gulp-pug');
+var cleanCSS = require('gulp-clean-css');
 
 gulp.task('build:html', function(){
-	gulp.src('src/index.html')
-		.pipe(fileInclude({
-			prefix: '{{',
-			suffix: '}}',
-			basepath: '@file'
-		}))
+	return gulp.src('src/index.pug')
+		.pipe(pug())
 		.pipe(htmlmin({collapseWhitespace: true}))
 		.pipe(gulp.dest('dist'));
 });
 
 gulp.task('build:css', function(){
-	gulp.src('src/styles/main.sass')
+	return gulp.src('src/main.sass')
 		.pipe(sass().on('error', sass.logError))
-		.pipe(gulp.dest('dist/styles'));
+		.pipe(cleanCSS())
+		.pipe(gulp.dest('dist'));
 });
+
+gulp.task('build', ['build:html', 'build:css']);
