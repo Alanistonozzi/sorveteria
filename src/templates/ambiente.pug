@@ -1,28 +1,24 @@
-
+mixin foto(src, alt, caption)
+	li.ambiente__foto-container
+			figure
+				img.ambiente__foto(src=src alt=alt)
+				if caption
+					figcaption.ambiente__legenda=caption
 		
 
-div.box__ambiente
-	h1.titulo__ambiente Ambiente 
-		div.ambiente_fotos 
-			ul
-				li.ambiente__imagens 
-					a.box__main2
-						img.main__fotos(src="imgs/gelato.jpg" border="0" alt="#")
-						br
-						span #
+div.ambiente
+	h1.ambiente__titulo Ambiente 
 
-				li.ambiente__imagens 
-					a.box__main2
-						img.main__fotos(src="imgs/balcao.jpg" border="0" alt="#")
-						br
-						span #
-				li.ambiente__imagens 
-					a.box__main2
-						img.main__fotos(src="imgs/Ambiente.jpg" border="0" alt="#")
-						br
-						span #	
-				li.ambiente__imagens 
-					a.box__main2
-						img.main__fotos(src="imgs/home.jpg" border="0" alt="#")
-						br
-						span #		
+
+	ul.ambiente__fotos
+
+		+foto("imgs/Gelato.jpg", "gelato", "#")
+
+		+foto("imgs/balcao.jpg", "balcão", "#")
+
+		+foto("imgs/ambiente.jpg", "#", "#")
+
+		+foto("imgs/home.jpg", "home", "#")
+
+
+
