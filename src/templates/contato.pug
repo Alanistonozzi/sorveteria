@@ -1,9 +1,11 @@
 form.formulario
-	input(type="text" name="nome" value="Nome")
-	br
-	input(type="text" name="sobrenome" value="Sobrenome")
-	br
-	input(type="email" name="e-mail" value="E-mail")
-	br
-	input(type="text" name="comentario" value="Comentário")
-	button(type="button") Enviar
+	
+	.input-container
+
+		input.input_nome(type="text" name="nome" value="Nome") 
+		br
+		input.input_email(type="email" name="e-mail" value="E-mail")
+		br
+		input.input_comentario(type="text" name="comentario" value="Comentário")
+
+		button.botao_enviar(type="button") Enviar
