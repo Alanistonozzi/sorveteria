@@ -4,6 +4,11 @@ var pug = require('gulp-pug');
 var cleanCSS = require('gulp-clean-css');
 var environment = process.env.ENV;
 
+var files = {
+	sass: ['./src/**/*.sass'],
+	pug: ['./src/**/*.pug']
+};
+
 gulp.task('build:html', function(){
 	switch (environment) {
 		case 'prod':
@@ -41,3 +46,10 @@ gulp.task('build:css', function(){
 });
 
 gulp.task('build', ['build:html', 'build:css']);
+
+gulp.task('build--watch', function (){
+	gulp.watch(files.sass, ['build:css']);
+	gulp.watch(files.pug, ['build:html']);
+});
+
+
