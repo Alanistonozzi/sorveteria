@@ -43,12 +43,19 @@
 			</ul>
 		</div>
 		<form class="formulario">
-			<div class="input-container">
-				<input class="input_nome" type="text" name="nome" value="Nome"><br>
-				<input class="input_email" type="email" name="e-mail" value="E-mail"><br>
-				<input class="input_comentario" type="text" name="comentario" value="Comentário">
-				<button class="botao_enviar" type="button">Enviar</button>
+			<div class="input input" id="input-nome">
+				<label class="label">Nome</label>
+				<input class="input__nome" type="text" name="nome"><img class="input__icone" src="../src/imgs/contato.png">
 			</div>
+			<div class="input" id="input-email">
+				<label class="label">E-mail</label>
+				<input class="input__email" type="email" name="e-mail"><img class="input__icone" src="../src/imgs/icone_email.png">
+			</div>
+			<div class="input" id="input-comentario">
+				<label class="label">Mensagem</label>
+				<input class="input__comentario" type="text" name="comentario"><img class="input__icone" src="../src/imgs/comentario.png">
+			</div>
+			<button class="button__enviar" id="button-enviar" type="button">Enviar</button>
 		</form>
 		<footer class="footer">
 			<div class="footer__direito">
@@ -57,6 +64,7 @@
 			</div>
 			<div class="footer__esquerdo"><img class="footer__logo" src="imgs/logobranca.png"></div>
 		</footer>
+		<script src="Validador.class.js"></script>
 		<script src="script.js"></script>
 	</body>
 </html>

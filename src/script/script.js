@@ -1,29 +1,72 @@
-var input_nome = document.querySelector(".input_nome");
-var input_email = document.querySelector(".input_email");
-var input_comentario = document.querySelector(".input_comentario");
-var botao_enviar = document.querySelector(".botao_enviar");
+var validador = new Validador();
 
-function okin(){
-	console.log("Focusin funcionando")	
+
+var inputNome = document.querySelector("#input-nome");
+var inputEmail = document.querySelector("#input-email");
+var inputComentario = document.querySelector("#input-comentario");
+var botaoEnviar = document.querySelector("#button-enviar");
+ 
+
+function nomeIn(){
+	inputNome.classList.add('input_active')
+
 };
 
-function okout(){
-	console.log("focusout funcionando")
+function nomeOut(){
+	inputNome.classList.remove('input_active')
+
+	var valor = inputNome.querySelector("input").value
+	var valid = validador.validarNome(valor)
+
+	if (valid) {
+		inputNome.classList.remove("input_invalid")
+		
+	} else {
+	 	inputNome.classList.add("input_invalid")
+	}
+
+};
+function nomeinvalid(){
+	inputNome.classList.add("input_invalid")
+}
+//funções email
+
+function emailIn(){
+	inputEmail.classList.add("input_active")
+
 };
 
+function emailOut(){
+	inputEmail.classList.remove("input_active")	
+
+};
+//funções comentários 
+function comentarioIn(){
+	inputComentario.classList.add("input_active")
+
+};
+function comentarioOut(){
+	inputComentario.classList.remove("input_active")
+
+}; 
+
+//click 
 function okclick(){
 	console.log("click funcionando")
 };
 
-input_nome.addEventListener("focusin", okin);
-input_nome.addEventListener("focusout", okout);
 
-input_email.addEventListener("focusin",okin);
-input_email.addEventListener("focusout", okout);
+inputNome.addEventListener("focusin", nomeIn);
+inputNome.addEventListener("focusout", nomeOut);
 
-input_comentario.addEventListener("focusin",okin);
-input_comentario.addEventListener("focusout", okout);
+inputEmail.addEventListener("focusin",emailIn);
+inputEmail.addEventListener("focusout", emailOut);
 
-botao_enviar.addEventListener("click",okclick);
+inputComentario.addEventListener("focusin",comentarioIn);
+inputComentario.addEventListener("focusout", comentarioOut);
 
-		
+botaoEnviar.addEventListener("click",okclick);
+
+//classes
+
+	

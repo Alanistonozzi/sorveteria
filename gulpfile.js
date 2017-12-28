@@ -3,12 +3,12 @@ var sass = require('gulp-sass');
 var pug = require('gulp-pug');
 var cleanCSS = require('gulp-clean-css');
 var environment = process.env.ENV;
-var uglify = require('uglify-js')
+var uglify = require('gulp-uglify')
 
 var files = {
 	sass: ['./src/**/*.sass'],
-	pug: ['./src/**/*.pug']
-	script: ["./src/**/script.js"]
+	pug: ['./src/**/*.pug'],
+	script: ["./src/**/*.js"]
 };
 
 gulp.task('build:html', function(){
@@ -17,7 +17,7 @@ gulp.task('build:html', function(){
 			return gulp.src('src/index.pug')
 				.pipe(pug())
 				.pipe(gulp.dest('dist'));
-			break;
+			break;s
 		case 'dev':
 		default:
 			return gulp.src('src/index.pug')
@@ -50,16 +50,13 @@ gulp.task('build:css', function(){
 gulp.task("build:js", function(){
 	switch (environment) {
 		case 'prod':
-			return gulp.src('src/script/script.js')
+			return gulp.src('src/script/**/*.js')
 				.pipe(uglify())
 				.pipe(gulp.dest('dist'));
 			break;
 		case 'dev':
 		default:
-			return gulp.src('src/script/script.js')
-				.pipe(uglify({
-					pretty: '\t'
-				}))
+			return gulp.src('src/script/**/*.js')
 				.pipe(gulp.dest('dist'));
 			break;
 	

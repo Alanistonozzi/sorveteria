@@ -1,11 +1,21 @@
 form.formulario
 	
-	.input-container
 
-		input.input_nome(type="text" name="nome" value="Nome") 
-		br
-		input.input_email(type="email" name="e-mail" value="E-mail")
-		br
-		input.input_comentario(type="text" name="comentario" value="Comentário")
+	.input.input#input-nome
+		label.label Nome
+		input.input__nome(type="text" name="nome" ) 
+		img.input__icone(src="../src/imgs/contato.png")
+	
+	.input#input-email
+		label.label E-mail
+		input.input__email(type="email" name="e-mail")
+		img.input__icone(src="../src/imgs/icone_email.png")
+	
+	.input#input-comentario
+		label.label Mensagem
+		input.input__comentario(type="text" name="comentario" )
+		
+		img.input__icone(src="../src/imgs/comentario.png")
 
-		button.botao_enviar(type="button") Enviar
+	button.button__enviar#button-enviar(type="button") Enviar
+
