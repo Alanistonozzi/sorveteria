@@ -1,4 +1,4 @@
-form.formulario
+form.formulario(action="http://localhost/contato" method="post")
 	
 
 	.input.input#input-nome
@@ -8,12 +8,12 @@ form.formulario
 	
 	.input#input-email
 		label.label E-mail
-		input.input__email(type="email" name="e-mail")
+		input.input__email(type="email" name="email")
 		img.input__icone(src="../src/imgs/icone_email.png")
 	
 	.input#input-comentario
 		label.label Mensagem
-		input.input__comentario(type="text" name="comentario" )
+		input.input__comentario(type="text" name="msg" )
 		
 		img.input__icone(src="../src/imgs/comentario.png")
 
