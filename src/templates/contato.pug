@@ -3,7 +3,7 @@ form.formulario(action="http://localhost/contato" method="post")
 
 	.input.input#input-nome
 		label.label Nome
-		input.input__nome(type="text" name="nome" ) 
+		input.input__nome(type="text" name="nome") 
 		img.input__icone(src="../src/imgs/contato.png")
 	
 	.input#input-email
@@ -13,9 +13,7 @@ form.formulario(action="http://localhost/contato" method="post")
 	
 	.input#input-comentario
 		label.label Mensagem
-		input.input__comentario(type="text" name="msg" )
-		
+		input.input__comentario(type="text" name="msg")
 		img.input__icone(src="../src/imgs/comentario.png")
 
-	button.button__enviar#button-enviar(type="button") Enviar
-
+	button.button__enviar#button-enviar(type="submit") Enviar
