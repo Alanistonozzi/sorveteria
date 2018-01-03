@@ -1,19 +1,19 @@
-form.formulario(action="http://localhost/contato" method="post")
+form.formulario(action="http://localhost/php/novo-contato.php" method="get")
 	
 
 	.input.input#input-nome
 		label.label Nome
 		input.input__nome(type="text" name="nome") 
-		img.input__icone(src="../src/imgs/contato.png")
+		img.input__icone(src="imgs/contato.png")
 	
 	.input#input-email
 		label.label E-mail
 		input.input__email(type="email" name="email")
-		img.input__icone(src="../src/imgs/icone_email.png")
+		img.input__icone(src="imgs/icone_email.png")
 	
 	.input#input-comentario
 		label.label Mensagem
 		input.input__comentario(type="text" name="msg")
-		img.input__icone(src="../src/imgs/comentario.png")
+		img.input__icone(src="imgs/comentario.png")
 
 	button.button__enviar#button-enviar(type="submit") Enviar
